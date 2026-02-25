@@ -1,0 +1,1 @@
+[2026-02-25 13:42:19] [FAILURE] [CONTEXT: REPL] [ERROR: 'charmap' codec can't encode character '\u25b6' in position 11: character maps to <undefined>]

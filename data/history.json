@@ -1,0 +1,72 @@
+[
+  {
+    "role": "user",
+    "content": "hi",
+    "timestamp": 1772004692
+  },
+  {
+    "role": "model",
+    "content": "",
+    "timestamp": 1772004692
+  },
+  {
+    "role": "user",
+    "content": "hi",
+    "timestamp": 1772004865
+  },
+  {
+    "role": "model",
+    "content": "",
+    "timestamp": 1772004865
+  },
+  {
+    "role": "user",
+    "content": "hi",
+    "timestamp": 1772004878
+  },
+  {
+    "role": "model",
+    "content": "",
+    "timestamp": 1772004878
+  },
+  {
+    "role": "user",
+    "content": "python test_api_key.py",
+    "timestamp": 1772005030
+  },
+  {
+    "role": "model",
+    "content": "",
+    "timestamp": 1772005030
+  },
+  {
+    "role": "user",
+    "content": "hi",
+    "timestamp": 1772005385
+  },
+  {
+    "role": "model",
+    "content": "To proceed, I can help answer your questions or provide information on a specific topic. What would you like to know or discuss?",
+    "timestamp": 1772005386
+  },
+  {
+    "role": "user",
+    "content": "hi",
+    "timestamp": 1772005496
+  },
+  {
+    "role": "model",
+    "content": "Hello! How can I assist you today?",
+    "timestamp": 1772005496
+  },
+  {
+    "role": "user",
+    "content": "search on web todays top tech news summarize and create text file",
+    "timestamp": 1772005528
+  },
+  {
+    "role": "model",
+    "content": "",
+    "timestamp": 1772005528
+  }
+]

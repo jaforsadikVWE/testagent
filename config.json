@@ -1,0 +1,25 @@
+{
+  "groq_api_keys": [
+    "",
+    "gsk_YOUR_KEY_2_HERE",
+    "gsk_YOUR_KEY_3_HERE"
+  ],
+  "models": {
+    "heavy": "llama-3.3-70b-versatile",
+    "fast": "llama-3.3-70b-versatile",
+    "fallback": "llama-3.3-70b-versatile"
+  },
+  "confidence_threshold": 0.5,
+  "experimental_override": false,
+  "max_retries": 3,
+  "request_timeout": 30,
+  "memory": {
+    "history_file": "data/history.json",
+    "max_turns": 15
+  },
+  "logging": {
+    "audit_log": "logs/audit.log",
+    "max_bytes": 1048576,
+    "backup_count": 5
+  }
+}
