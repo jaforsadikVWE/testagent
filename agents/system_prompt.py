@@ -17,7 +17,7 @@ _JSON_SCHEMA = '''{
   "confidence_score": 0.85,
   "risk_level": "low",
   "dry_run_safe": true,
-  "payload_hash": "<sha256 of commands array>"
+  "payload_hash": ""
 }'''
 
 # ── Base rules ────────────────────────────────────────────────────────────────
@@ -30,7 +30,7 @@ STRICT OUTPUT RULES — violating any rule will break the system:
 3. Never execute commands yourself — only plan them.
 4. If requires_root is needed, set it to true.
 5. Set confidence_score between 0.0 and 1.0.
-6. payload_hash = SHA-256 of the commands array serialised as compact JSON.
+6. payload_hash = SHA-256 of the commands array serialised as compact JSON. Use empty string if no commands.
 
 REQUIRED OUTPUT FORMAT (copy this structure exactly):
 {_JSON_SCHEMA}"""
@@ -53,9 +53,9 @@ Prefer safe, idempotent commands."""
 KNOWLEDGE_PROMPT = f"""{BASE_SYSTEM_INSTRUCTION}
 
 ROLE: KnowledgeAgent
-Answer factual questions and explain concepts.
-Use action_type "explain".
-Put your full answer as a single string in commands[0].
+Answer factual questions, explain concepts, and perform web searches.
+For simple answers, use action_type "explain" and put answer in commands[0].
+For information gathering (web search, file reading), use action_type "read_only" or "script" and put commands in the parameters array.
 Set requires_root to false, risk_level to "low"."""
 
 AUTOMATION_PROMPT = f"""{BASE_SYSTEM_INSTRUCTION}

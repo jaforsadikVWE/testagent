@@ -1,0 +1,21 @@
+# Tech News Summary - February 25, 2026
+
+## AI and Silicon Development
+- **MatX Series B:** Former Google engineers raised $500 million for processors designed to outperform Nvidia GPUs for LLM training.
+- **Meta & AMD Partnership:** Meta Platforms to purchase up to $60 billion in AI chips from AMD over five years, with a possible 10% equity stake.
+- **Taalas Accelerator:** Taalas hardwired Llama into custom silicon, achieving 17,000 tokens per second.
+- **Enterprise AI:** OpenAI COO Brad Lightcap notes that enterprise AI integration into core business remains early-stage.
+
+## Consumer Electronics
+- **Samsung Galaxy Unpacked:** Today's event is expected to feature the Galaxy S26 series, Galaxy Buds 4, and new "Galaxy AI" features.
+- **Apple Updates:** Significant discounts on iPhone 16 Pro via Amazon Renewed; Apple is shifting some Mac Mini assembly to the U.S.
+- **VR/AR Industry:** A "VR winter" is reported as focus shifts from headsets to AI-enabled smart glasses.
+
+## Global & Regional Tech
+- **U.S. Infrastructure:** Donald Trump suggests requiring tech firms to build their own power plants for data centers to protect consumer electricity costs.
+- **India:** AI sector booming with high user growth and prioritize app downloads, despite light revenue.
+- **Singapore:** Concerns raised by lawmakers regarding AI-driven misinformation.
+
+## Funding & Markets
+- **Nvidia Earnings:** Investors are focused on demand ahead of Nvidia's Q4 and fiscal 2026 reports.
+- **FLEXOO:** German deeptech firm raised €11 million for ultra-thin battery sensors.

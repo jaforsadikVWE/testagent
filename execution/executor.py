@@ -138,6 +138,10 @@ def _execute_commands(
     last_exit_code  = 0
 
     for cmd in commands:
+        # ── Syntax Check: balanced quotes ────────────────────────
+        if not _check_shell_syntax(cmd):
+            return _error(f"Shell syntax error: unbalanced quotes in command: {cmd}")
+
         # ── Termux-API: verify the binary exists ──────────────────
         if script_type == "termux-api":
             bin_name = cmd.split()[0]
@@ -196,6 +200,17 @@ def _sha256_of_string(s: str) -> str:
     """Return the SHA-256 hex digest of a string (for per-command root hashes)."""
     import hashlib
     return hashlib.sha256(s.encode("utf-8")).hexdigest()
+
+
+def _check_shell_syntax(cmd: str) -> bool:
+    """
+    Very basic check for balanced quotes (single, double, backticks).
+    Does not handle escaped quotes or complex shell grammar.
+    """
+    s_count = cmd.count("'")
+    d_count = cmd.count('"')
+    b_count = cmd.count('`')
+    return (s_count % 2 == 0) and (d_count % 2 == 0) and (b_count % 2 == 0)
 
 
 def _error(message: str) -> Dict[str, Any]:
