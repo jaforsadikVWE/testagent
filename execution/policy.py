@@ -104,9 +104,12 @@ def evaluate_plan(
     expected_hash = compute_payload_hash(commands)
     provided_hash = plan.get("payload_hash", "")
 
-    if not provided_hash:
-        # Sub-agent forgot to include the hash → compute and fill it in
-        logger.warning("payload_hash missing from plan – computing it now.")
+    # Treat placeholders as missing/empty
+    is_placeholder = "<" in provided_hash or "sha256" in provided_hash.lower() or (provided_hash and len(provided_hash) != 64)
+
+    if not provided_hash or is_placeholder:
+        # Sub-agent forgot to include the hash or used a placeholder → compute and fill it in
+        logger.warning(f"payload_hash '{provided_hash}' is missing or a placeholder – computing it now.")
         plan["payload_hash"] = expected_hash
         provided_hash = expected_hash
 

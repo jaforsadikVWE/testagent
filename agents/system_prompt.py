@@ -31,6 +31,7 @@ STRICT OUTPUT RULES — violating any rule will break the system:
 4. If requires_root is needed, set it to true.
 5. Set confidence_score between 0.0 and 1.0.
 6. payload_hash = SHA-256 of the commands array serialised as compact JSON. Use empty string if no commands.
+7. NEVER use placeholders like "YOUR_API_KEY" or "INSERT_HERE". If a tool requires a key you don't have, use a public/free alternative or inform the user.
 
 REQUIRED OUTPUT FORMAT (copy this structure exactly):
 {_JSON_SCHEMA}"""

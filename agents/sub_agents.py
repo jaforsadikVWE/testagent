@@ -61,9 +61,19 @@ def _ensure_required_fields(plan: Dict[str, Any]) -> Dict[str, Any]:
     if "dry_run_safe" not in plan:
         plan["dry_run_safe"] = True
     
-    # Compute payload_hash if missing
+    # Compute payload_hash if missing or invalid placeholder
     commands = plan.get("parameters", {}).get("commands", [])
-    if not plan.get("payload_hash"):
+    current_hash = plan.get("payload_hash", "")
+    
+    # Recalculate if empty, or looks like a placeholder template
+    needs_rehash = (
+        not current_hash or 
+        "<" in current_hash or 
+        "sha256" in current_hash.lower() or
+        len(current_hash) != 64
+    )
+    
+    if needs_rehash:
         plan["payload_hash"] = _hash_commands(commands) if commands else ""
     
     return plan
